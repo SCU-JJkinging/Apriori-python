@@ -32,8 +32,9 @@ def create_C1(data_set): # 产生候选1项集
     return C1
 
 
-def is_apriori(Ck_item, Lksub1): # 检查一下候选K项集是否是由频繁K-1项集自连接得来的
+def is_apriori(Ck_item, Lksub1): 
     """
+    # 根据频繁项集的先验知识：一个频繁项集的非空子集一定是频繁项集。所以只要在候选频繁k项集中，它的k-1项子集不存在于频繁k-1项集中，则该候选频繁k项集就一定不是频繁k项集
     Judge whether a frequent candidate k-itemset satisfy Apriori property.
     Args:
         Ck_item: a frequent candidate k-itemset in Ck which contains all frequent
